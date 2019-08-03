@@ -186,7 +186,7 @@ class CommandMessage {
 					const err = new CommandFormatError(this);
 					return this.reply(err.message);
 				}
-				return this.reply('Cancelled command.');
+				return this.reply('Đã huỷ lệnh.');
 			}
 			args = result.values;
 		}

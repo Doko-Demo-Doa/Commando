@@ -179,10 +179,10 @@ class Argument {
 
 			// Prompt the user for a new value
 			prompts.push(await msg.reply(stripIndents`
-				${empty ? this.prompt : valid ? valid : `You provided an invalid ${this.label}. Please try again.`}
+				${empty ? this.prompt : valid ? valid : `Bạn đã gõ sai lệnh ${this.label}. Vui lòng thử lại.`}
 				${oneLine`
-					Respond with \`cancel\` to cancel the command.
-					${wait ? `The command will automatically be cancelled in ${this.wait} seconds.` : ''}
+					Gõ \`cancel\` để huỷ lệnh.
+					${wait ? `Lệnh sẽ tự động bị huỷ sau ${this.wait} giây.` : ''}
 				`}
 			`));
 
@@ -265,13 +265,13 @@ class Argument {
 					const escaped = escapeMarkdown(value).replace(/@/g, '@\u200b');
 					prompts.push(await msg.reply(stripIndents`
 						${valid ? valid : oneLine`
-							You provided an invalid ${this.label},
-							"${escaped.length < 1850 ? escaped : '[too long to show]'}".
-							Please try again.
+							Bạn đã gõ sai tham số cho ${this.label},
+							"${escaped.length < 1850 ? escaped : '[dài vkl ko show được]'}".
+							Vui lòng thử lại.
 						`}
 						${oneLine`
-							Respond with \`cancel\` to cancel the command, or \`finish\` to finish entry up to this point.
-							${wait ? `The command will automatically be cancelled in ${this.wait} seconds.` : ''}
+							Gõ \`cancel\` để huỷ lệnh, hoặc \`finish\` để kết thúc lệnh ở điểm hiện tại.
+							${wait ? `Lệnh sẽ tự động bị huỷ sau ${this.wait} giây.` : ''}
 						`}
 					`));
 				} else if(results.length === 0) {
@@ -279,7 +279,7 @@ class Argument {
 						${this.prompt}
 						${oneLine`
 							Respond with \`cancel\` to cancel the command, or \`finish\` to finish entry.
-							${wait ? `The command will automatically be cancelled in ${this.wait} seconds, unless you respond.` : ''}
+							${wait ? `Lệnh sẽ tự động bị huỷ sau ${this.wait} giây, trừ khi bạn gõ tiếp.` : ''}
 						`}
 					`));
 				}
