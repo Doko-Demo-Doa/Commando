@@ -1,3 +1,5 @@
+* Note: This fork is the same with upstream repository. There are only some localized strings that are different.
+
 # Commando
 [![Discord](https://discordapp.com/api/guilds/222078108977594368/embed.png)](https://discord.gg/bRCvFy9)
 [![Downloads](https://img.shields.io/npm/dt/discord.js-commando.svg)](https://www.npmjs.com/package/discord.js-commando)
